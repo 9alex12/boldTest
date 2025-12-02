@@ -14,12 +14,14 @@ export interface Transaction {
 interface ApiResponse {
   data: Transaction[];
 }
+
 export default async function HomePage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ timeRange: string }>;
 }) {
-  const timeRange = searchParams?.timeRange || "month";
+  const params = await searchParams;
+  const timeRange = params?.timeRange || "month";
   const res = await fetch("https://bold-fe-api.vercel.app/api");
   const { data }: ApiResponse = await res.json();
   const date = new Date();

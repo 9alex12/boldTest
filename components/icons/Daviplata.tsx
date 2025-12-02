@@ -1,6 +1,6 @@
 import React from "react";
 
-const Daviplata = (props) => (
+const Daviplata = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     width="21"
     height="20"

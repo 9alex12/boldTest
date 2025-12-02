@@ -1,19 +1,18 @@
 import React from "react";
 
-const SuccessBadge = ({ size = 32, className = "" }) => {
+const SuccessBadge = (props: React.SVGProps<SVGSVGElement>) => {
   const stroke = "white";
   const fill = "#7CE6B9";
-  const s = Number(size);
   return (
     <svg
-      width={s}
-      height={s}
+      width="32"
+      height="32"
       viewBox="0 0 24 24"
       fill="none"
-      className={className}
       aria-label="success"
       role="img"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <circle cx="12" cy="12" r="11" fill={fill} />
       <path

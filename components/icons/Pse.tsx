@@ -1,6 +1,6 @@
 import React from "react";
 
-const PSEIcon = (props) => (
+const PSEIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     width="30"
     height="30"

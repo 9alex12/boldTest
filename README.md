@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BoldTest - Next.js App
 
-## Getting Started
+This project is a web application built with [Next.js](https://nextjs.org) and TypeScript, designed to visualize and filter sales transactions using different payment methods. It includes custom components, modern styling, and automated tests.
 
-First, run the development server:
+## Link Prod: https://bold-test-git-main-9alex12s-projects.vercel.app/
+## Main Structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **app/**: Global configuration (`globals.css`), main layout, and the main page (`page.tsx`).
+- **components/**: Reusable components:
+  - `MainTable`: Main transactions table.
+  - `InformationCard`: Info card with totals.
+  - `Filter`: Filter for payment type.
+  - `SideModal`: Side modal with details.
+  - `TableTabs`: Tabs for time range selection.
+  - `icons/`: Custom SVG icons.
+- **views/**: Main view (`Home.tsx`) that integrates components and manages filtering and navigation logic.
+- **utils/**: Utility functions for formatting and constants.
+- **__tests__/**: Unit tests for components using Jest and Testing Library.
+- **public/**: Static files.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Functionality
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Display transactions filtered by payment method and time range.
+- Side modal with full details for each transaction.
+- Interactive filters and tabs to change the time range.
+- Modern styling with Tailwind CSS and custom fonts.
+- Unit tests to ensure component quality.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Installation and Usage
 
-## Learn More
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+## Useful Scripts
+- `npm run dev`: Start the development server.
+- `npm run test`: Run unit tests.
+- `npm run build`: Build the app for production.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Testing
+Tests are located in the `__tests__` folder and cover the main components. They are run using Jest and Testing Library.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Configuration
+- **Jest**: Configured for Next.js and TypeScript (`jest.config.ts`, `jest.setup.ts`).
+- **ESLint**: Code quality rules (`.eslintrc.js`).
+- **Tailwind/PostCSS**: Modern styling (`postcss.config.js`, `globals.css`).
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Nequi = (props) => (
+const Nequi = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     width="16"
     height="13"

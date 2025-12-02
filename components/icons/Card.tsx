@@ -1,4 +1,4 @@
-const LogoIcon = (props) => (
+const LogoIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     width="30"
     height="30"
