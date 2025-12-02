@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
+import Logo from "@/components/icons/Logo";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const montserrat = Montserrat({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +22,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${montserrat.variable} antialiased bg-bold-background font-[family-name:var(--font-geist-sans)] flex flex-col gap-5`}
       >
-        {children}
+        <header className="flex justify-center bg-bold-gradient px-8 py-6">
+          <div className="flex flex-1 items-center  justify-between">
+            <Logo />
+            <ul className="flex  gap-6 text-white">
+              <li>
+                <a href="#" className="hover:underline">
+                  Mi negocio
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
+                  Ayuda
+                </a>
+              </li>
+            </ul>
+          </div>
+        </header>
+        <main className="flex flex-col gap-5">{children}</main>
       </body>
     </html>
   );
